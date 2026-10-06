@@ -1,0 +1,54 @@
+﻿@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 100;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WCzsXzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 200;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WC7sWzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 300;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WC2UWzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WCzsWzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 500;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WCwkWzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WC-URzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 700;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WC9wRzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 800;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WC7sRzLdnfw-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 900;
+  src: url(s/lexend/v26/wlptgwvFAVdoq2_F94zlCfv0bz1WC5IRzLdnfw-1.ttf) format('truetype');
+}
