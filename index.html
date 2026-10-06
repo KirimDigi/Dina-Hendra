@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="id" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
@@ -6125,232 +6125,537 @@ Jakarta Selatan"
                       >
                         <div class="elementor-widget-container">
                           <style>
-                            .saic-comment-content {
-                              margin-left: 0 !important;
+                            .custom-rsvp-box {
+                              background: #ffffff;
+                              border: 1px solid #eed8e2;
+                              border-radius: 12px;
+                              padding: 24px 20px;
+                              box-shadow: 0 4px 20px rgba(75, 15, 40, 0.08);
+                              font-family: inherit;
                             }
-                            .saic-comment-avatar {
-                              display: none !important;
+                            .custom-rsvp-box input[type="text"],
+                            .custom-rsvp-box textarea,
+                            .custom-rsvp-box select {
+                              width: 100%;
+                              padding: 12px 14px;
+                              border: 1.5px solid #e2d3db;
+                              border-radius: 8px;
+                              font-family: inherit;
+                              font-size: 14px;
+                              color: #333333;
+                              background: #faf7f8;
+                              outline: none;
+                              transition: all 0.25s ease;
+                              box-sizing: border-box;
+                              margin-bottom: 14px;
+                            }
+                            .custom-rsvp-box input[type="text"]:focus,
+                            .custom-rsvp-box textarea:focus,
+                            .custom-rsvp-box select:focus {
+                              border-color: #4b0f28;
+                              background: #ffffff;
+                              box-shadow: 0 0 0 3px rgba(75, 15, 40, 0.12);
+                            }
+                            .custom-rsvp-box textarea {
+                              min-height: 90px;
+                              resize: vertical;
+                            }
+                            .custom-att-title {
+                              font-size: 13px;
+                              font-weight: 700;
+                              color: #4b0f28;
+                              text-align: center;
+                              margin-bottom: 10px;
+                              text-transform: uppercase;
+                              letter-spacing: 0.5px;
+                            }
+                            .custom-att-btns {
+                              display: flex;
+                              gap: 10px;
+                              margin-bottom: 14px;
+                            }
+                            .custom-att-btn {
+                              flex: 1;
+                              padding: 11px 12px;
+                              border: 1.5px solid #4b0f28;
+                              border-radius: 8px;
+                              background: #ffffff;
+                              color: #4b0f28;
+                              font-size: 13.5px;
+                              font-weight: 600;
+                              cursor: pointer;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              gap: 6px;
+                              transition: all 0.25s ease;
+                            }
+                            .custom-att-btn:hover {
+                              background: rgba(75, 15, 40, 0.06);
+                            }
+                            .custom-att-btn.active {
+                              background: #4b0f28;
+                              color: #ffffff;
+                              box-shadow: 0 3px 10px rgba(75, 15, 40, 0.25);
+                            }
+                            .custom-guest-wrap {
+                              display: flex;
+                              align-items: center;
+                              gap: 10px;
+                              margin-bottom: 14px;
+                              background: rgba(75, 15, 40, 0.04);
+                              padding: 8px 12px;
+                              border-radius: 8px;
+                            }
+                            .custom-guest-wrap label {
+                              font-size: 13px;
+                              font-weight: 600;
+                              color: #4b0f28;
+                              white-space: nowrap;
+                              display: flex;
+                              align-items: center;
+                              gap: 6px;
+                            }
+                            .custom-guest-wrap select {
+                              margin-bottom: 0;
+                              background: #ffffff;
+                            }
+                            .custom-btn-submit {
+                              width: 100%;
+                              padding: 13px 20px;
+                              background: #4b0f28;
+                              color: #ffffff;
+                              font-family: inherit;
+                              font-size: 14.5px;
+                              font-weight: 700;
+                              border: none;
+                              border-radius: 8px;
+                              cursor: pointer;
+                              transition: all 0.3s ease;
+                              box-shadow: 0 4px 14px rgba(75, 15, 40, 0.25);
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              gap: 8px;
+                            }
+                            .custom-btn-submit:hover:not(:disabled) {
+                              background: #380a1d;
+                              transform: translateY(-2px);
+                              box-shadow: 0 6px 18px rgba(75, 15, 40, 0.35);
+                            }
+                            .custom-btn-submit:disabled {
+                              opacity: 0.7;
+                              cursor: not-allowed;
+                            }
+                            .custom-toggle-ucapan-btn {
+                              padding: 11px 24px;
+                              background: #4b0f28;
+                              color: #ffffff;
+                              font-family: inherit;
+                              font-size: 13.5px;
+                              font-weight: 600;
+                              border: none;
+                              border-radius: 25px;
+                              cursor: pointer;
+                              transition: all 0.3s ease;
+                              box-shadow: 0 3px 12px rgba(75, 15, 40, 0.2);
+                              display: inline-flex;
+                              align-items: center;
+                              gap: 8px;
+                            }
+                            .custom-toggle-ucapan-btn:hover {
+                              background: #380a1d;
+                              transform: translateY(-2px);
+                              box-shadow: 0 5px 16px rgba(75, 15, 40, 0.3);
+                            }
+                            .custom-wishes-box {
+                              margin-top: 18px;
+                              border-top: 1px dashed #eed8e2;
+                              padding-top: 16px;
+                            }
+                            .custom-wishes-list {
+                              max-height: 360px;
+                              overflow-y: auto;
+                              padding-right: 4px;
+                            }
+                            .custom-wishes-list::-webkit-scrollbar {
+                              width: 5px;
+                            }
+                            .custom-wishes-list::-webkit-scrollbar-thumb {
+                              background: #4b0f2840;
+                              border-radius: 4px;
+                            }
+                            .custom-wish-item {
+                              background: #faf7f8;
+                              border-left: 3px solid #4b0f28;
+                              border-radius: 6px;
+                              padding: 12px 14px;
+                              margin-bottom: 10px;
+                              box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+                              animation: fadeIn 0.4s ease;
+                            }
+                            .custom-wish-header {
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              margin-bottom: 6px;
+                              flex-wrap: wrap;
+                              gap: 4px;
+                            }
+                            .custom-wish-name {
+                              font-weight: 700;
+                              color: #4b0f28;
+                              font-size: 13.5px;
+                              display: flex;
+                              align-items: center;
+                              gap: 6px;
+                            }
+                            .custom-wish-badge {
+                              font-size: 11px;
+                              padding: 2px 8px;
+                              border-radius: 12px;
+                              font-weight: 600;
+                            }
+                            .custom-wish-badge.hadir {
+                              background: #e8f5e9;
+                              color: #2e7d32;
+                            }
+                            .custom-wish-badge.tidak-hadir {
+                              background: #fbe9e7;
+                              color: #c62828;
+                            }
+                            .custom-wish-text {
+                              font-size: 13px;
+                              color: #444444;
+                              line-height: 1.5;
+                              margin-bottom: 4px;
+                              word-break: break-word;
+                            }
+                            .custom-wish-time {
+                              font-size: 10.5px;
+                              color: #8c8c8c;
+                              text-align: right;
+                            }
+                            .custom-status-msg {
+                              padding: 10px 14px;
+                              border-radius: 6px;
+                              font-size: 13px;
+                              margin-top: 12px;
+                              text-align: center;
+                              display: none;
+                            }
+                            .custom-status-msg.success {
+                              background: #e8f5e9;
+                              color: #2e7d32;
+                              border: 1px solid #c8e6c9;
+                            }
+                            .custom-status-msg.error {
+                              background: #ffebee;
+                              color: #c62828;
+                              border: 1px solid #ffcdd2;
                             }
                           </style>
-                          <div class="saic-wrapper">
-                            <div
-                              class="saic-wrapper saic-default saic-border saic-full"
-                              style="overflow: hidden"
-                            >
-                              <div class="saic-wrap-link" style="display: none">
-                                <a
-                                  href="index-1.htm?post_id=29862&#038;comments=25&#038;get=500&#038;order=DESC"
-                                  id="saic-link-29862"
-                                  class="saic-link saic-icon-link saic-icon-link-true auto-load-true"
+
+                          <div class="custom-rsvp-box">
+                            <form id="formRsvpDinaHendra">
+                              <input
+                                type="text"
+                                id="rsvpNama"
+                                name="nama"
+                                placeholder="Nama Anda"
+                                required
+                              />
+
+                              <textarea
+                                id="rsvpUcapan"
+                                name="ucapan"
+                                placeholder="Tuliskan ucapan dan doa restu untuk kedua mempelai..."
+                                required
+                              ></textarea>
+
+                              <div class="custom-att-title">Konfirmasi Kehadiran</div>
+                              <div class="custom-att-btns">
+                                <button
+                                  type="button"
+                                  class="custom-att-btn active"
+                                  id="btnHadir"
+                                  data-value="Hadir"
                                 >
-                                  <i class="saico-comment"></i>
-                                  <span>25</span>
-                                  Ucapan
-                                </a>
+                                  <i class="fas fa-check-circle"></i> Hadir
+                                </button>
+                                <button
+                                  type="button"
+                                  class="custom-att-btn"
+                                  id="btnTidakHadir"
+                                  data-value="Tidak Hadir"
+                                >
+                                  <i class="fas fa-times-circle"></i> Tidak Hadir
+                                </button>
+                              </div>
+                              <input type="hidden" id="rsvpKehadiran" name="kehadiran" value="Hadir" />
+
+                              <div class="custom-guest-wrap" id="wrapJumlahTamu">
+                                <label for="rsvpJumlah">
+                                  <i class="fas fa-user-friends"></i> Jumlah Tamu:
+                                </label>
+                                <select id="rsvpJumlah" name="jumlah">
+                                  <option value="1 Orang" selected>1 Orang</option>
+                                  <option value="2 Orang">2 Orang</option>
+                                  <option value="3 Orang">3 Orang</option>
+                                  <option value="4 Orang">4 Orang</option>
+                                  <option value="5 Orang">5 Orang</option>
+                                </select>
                               </div>
 
-                              <div
-                                id="saic-wrap-comment-29862"
-                                class="saic-wrap-comments"
-                                style="display: none"
-                                data-id="29862"
-                              >
-                                <div
-                                  id="saic-wrap-form-29862"
-                                  class="saic-wrap-form saic-clearfix"
-                                >
-                                  <div
-                                    id="saic-container-form-29862"
-                                    class="saic-container-form"
-                                  >
-                                    <div
-                                      id="respond-29862"
-                                      class="respond saic-clearfix"
-                                    >
-                                      <form
-                                        action=""
-                                        method="POST"
-                                        id="commentform-29862"
-                                      >
-                                        <p
-                                          class="comment-form-author saic-field-1"
-                                        >
-                                          <input
-                                            type="text"
-                                            name="author"
-                                            id="author"
-                                            class="saic-input"
-                                            aria-required="true"
-                                            placeholder="Nama"
-                                            value="Tamu Undangan"
-                                          />
-                                          <span class="saic-required">*</span>
-                                          <span
-                                            class="saic-error-info saic-error-info-name"
-                                            >Enter your name</span
-                                          >
-                                        </p>
+                              <button type="submit" id="btnSubmitRsvp" class="custom-btn-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                <span id="btnSubmitText">Kirim Ucapan</span>
+                              </button>
 
-                                        <div class="saic-wrap-textarea">
-                                          <textarea
-                                            name="comment"
-                                            id="saic-textarea-29862"
-                                            class="waci_comment saic-textarea autosize-textarea"
-                                            aria-required="true"
-                                            placeholder="Ucapan"
-                                            rows="1"
-                                          ></textarea>
-                                          <span class="saic-required">*</span>
-                                          <span
-                                            class="saic-error-info saic-error-info-text"
-                                            >minimal 2 karakter</span
-                                          >
-                                        </div>
+                              <div id="rsvpStatusMsg" class="custom-status-msg"></div>
+                            </form>
 
-                                        <div
-                                          class="saic-wrap-container-attendance"
-                                        >
-                                          <div class="saic-attendance">
-                                            <hr class="saic-line-attendance" />
-                                            <p class="saic-text-attendance">
-                                              Konfirmasi Kehadiran
-                                            </p>
-                                            <hr class="saic-line-attendance" />
-                                          </div>
-                                          <div class="saic-wrap-attendance">
-                                            <div class="saic-buttons">
-                                              <button
-                                                type="button"
-                                                id="optChoose"
-                                                value="notsure"
-                                                class="saic-button"
-                                                style="display: none"
-                                                disabled=""
-                                              >
-                                                Tidak Konfirmasi
-                                              </button>
-                                              <button
-                                                type="button"
-                                                id="optPresent"
-                                                value="present"
-                                                class="saic-button"
-                                              >
-                                                <i
-                                                  aria-hidden="true"
-                                                  class="fas fa-check-circle"
-                                                ></i>
-                                                <span id="optPresentText"
-                                                  >Hadir</span
-                                                >
-                                              </button>
-                                              <button
-                                                type="button"
-                                                id="optNotpresent"
-                                                value="notpresent"
-                                                class="saic-button"
-                                              >
-                                                <i
-                                                  aria-hidden="true"
-                                                  class="fas fa-times-circle"
-                                                ></i>
-                                                <span id="optNotpresentText"
-                                                  >Tidak Hadir</span
-                                                >
-                                              </button>
-                                            </div>
-                                            <input
-                                              type="hidden"
-                                              name="attendance"
-                                              id="attendance"
-                                              value="notsure"
-                                            />
-                                            <span class="saic-required">*</span>
-                                            <span
-                                              class="saic-error-info saic-error-info-attendance"
-                                              >Pilih konfirmasi kehadiran</span
-                                            >
-                                          </div>
-                                        </div>
+                            <!-- Button Tampilkan / Sembunyikan Ucapan -->
+                            <div style="text-align: center; margin-top: 18px;">
+                              <button type="button" id="btnToggleUcapan" class="custom-toggle-ucapan-btn">
+                                <i class="fas fa-envelope-open-text" id="toggleIcon"></i>
+                                <span id="toggleText">Tampilkan Ucapan</span>
+                                <span id="toggleBadge" style="background: rgba(255,255,255,0.2); padding: 1px 7px; border-radius: 10px; font-size: 11px;">0</span>
+                              </button>
+                            </div>
 
-                                        <div
-                                          class="saic-wrap-guest"
-                                          style="display: none"
-                                        >
-                                          <div class="guest-count">
-                                            <i class="fas fa-user"></i>
-                                            <p class="text-guest-count">
-                                              Jumlah Tamu
-                                            </p>
-                                          </div>
-
-                                          <select
-                                            name="guest"
-                                            id="guest"
-                                            class="saic-select"
-                                          >
-                                            <option value="1" selected="">
-                                              1 Orang
-                                            </option>
-                                            <option value="2">2 Orang</option>
-                                          </select>
-
-                                          <span class="saic-required">*</span>
-                                          <span
-                                            class="saic-error-info saic-error-info-guest"
-                                            >Pilih jumlah tamu</span
-                                          >
-                                        </div>
-
-                                        <div
-                                          class="saic-wrap-submit saic-clearfix"
-                                        >
-                                          <p class="form-submit">
-                                            <input
-                                              type="hidden"
-                                              name="comment_post_ID"
-                                              value="29862"
-                                              id="comment_post_ID"
-                                            />
-                                            <input
-                                              type="hidden"
-                                              name="comment_parent"
-                                              id="comment_parent"
-                                              value="0"
-                                            />
-                                            <input
-                                              type="hidden"
-                                              name="commentpress"
-                                              value="true"
-                                            />
-                                            <input
-                                              type="submit"
-                                              id="submit-29862"
-                                              value="Kirim"
-                                            />
-                                          </p>
-                                        </div>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div
-                                  id="saic-comment-status-29862"
-                                  class="saic-comment-status"
-                                ></div>
-
-                                <ul
-                                  id="saic-container-comment-29862"
-                                  class="saic-container-comments saic-order-DESC saic-has-25-comments saic-multiple-comments"
-                                  data-order="DESC"
-                                ></ul>
-
-                                <div
-                                  class="saic-holder-29862 saic-holder"
-                                ></div>
+                            <!-- List Ucapan & Doa -->
+                            <div id="wishesContainer" class="custom-wishes-box" style="display: none;">
+                              <div id="wishesLoading" style="display: none; text-align: center; padding: 16px; color: #4b0f28;">
+                                <i class="fas fa-spinner fa-spin" style="font-size: 20px;"></i>
+                                <p style="margin-top: 6px; font-size: 12.5px;">Memuat ucapan...</p>
                               </div>
+                              <div id="wishesEmpty" style="display: none; text-align: center; padding: 16px; color: #888; font-size: 13px; font-style: italic;">
+                                Belum ada ucapan. Jadilah yang pertama memberikan doa restu!
+                              </div>
+                              <div id="wishesList" class="custom-wishes-list"></div>
                             </div>
                           </div>
+
+                          <script>
+                            (function () {
+                              // Ganti URL ini dengan URL Web App Google Apps Script Anda setelah di-deploy
+                              var GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbz_REPLACE_WITH_YOUR_SCRIPT_ID/exec";
+                              
+                              var form = document.getElementById("formRsvpDinaHendra");
+                              var btnHadir = document.getElementById("btnHadir");
+                              var btnTidakHadir = document.getElementById("btnTidakHadir");
+                              var inputKehadiran = document.getElementById("rsvpKehadiran");
+                              var wrapJumlah = document.getElementById("wrapJumlahTamu");
+                              var btnSubmit = document.getElementById("btnSubmitRsvp");
+                              var btnSubmitText = document.getElementById("btnSubmitText");
+                              var statusMsg = document.getElementById("rsvpStatusMsg");
+                              var btnToggle = document.getElementById("btnToggleUcapan");
+                              var toggleText = document.getElementById("toggleText");
+                              var toggleIcon = document.getElementById("toggleIcon");
+                              var toggleBadge = document.getElementById("toggleBadge");
+                              var wishesContainer = document.getElementById("wishesContainer");
+                              var wishesList = document.getElementById("wishesList");
+                              var wishesLoading = document.getElementById("wishesLoading");
+                              var wishesEmpty = document.getElementById("wishesEmpty");
+
+                              // Local cache array
+                              var cachedWishes = JSON.parse(localStorage.getItem("wishes_dina_hendra") || "[]");
+
+                              // Default sample jika belum ada sama sekali
+                              if (cachedWishes.length === 0) {
+                                cachedWishes = [
+                                  {
+                                    nama: "Keluarga Besar Caniago",
+                                    ucapan: "Selamat menempuh hidup baru untuk Dina dan Hendra. Semoga menjadi keluarga sakinah, mawaddah, warahmah.",
+                                    kehadiran: "Hadir",
+                                    jumlah: "2 Orang",
+                                    timestamp: "06 Okt 2026 20:15"
+                                  },
+                                  {
+                                    nama: "Sahabat & Rekan Kerja",
+                                    ucapan: "Happy wedding Dina & Hendra! Lancar sampai hari H dan bahagia selalu selamanya!",
+                                    kehadiran: "Hadir",
+                                    jumlah: "1 Orang",
+                                    timestamp: "06 Okt 2026 18:30"
+                                  }
+                                ];
+                              }
+
+                              updateBadgeCount();
+
+                              // Toggle Kehadiran Buttons
+                              btnHadir.addEventListener("click", function () {
+                                btnHadir.classList.add("active");
+                                btnTidakHadir.classList.remove("active");
+                                inputKehadiran.value = "Hadir";
+                                wrapJumlah.style.display = "flex";
+                              });
+
+                              btnTidakHadir.addEventListener("click", function () {
+                                btnTidakHadir.classList.add("active");
+                                btnHadir.classList.remove("active");
+                                inputKehadiran.value = "Tidak Hadir";
+                                wrapJumlah.style.display = "none";
+                              });
+
+                              // Toggle Tampilkan / Sembunyikan Ucapan
+                              btnToggle.addEventListener("click", function () {
+                                if (wishesContainer.style.display === "none" || wishesContainer.style.display === "") {
+                                  wishesContainer.style.display = "block";
+                                  toggleText.textContent = "Sembunyikan Ucapan";
+                                  toggleIcon.className = "fas fa-envelope";
+                                  fetchWishesFromGAS();
+                                } else {
+                                  wishesContainer.style.display = "none";
+                                  toggleText.textContent = "Tampilkan Ucapan";
+                                  toggleIcon.className = "fas fa-envelope-open-text";
+                                }
+                              });
+
+                              function renderWishes(list) {
+                                wishesList.innerHTML = "";
+                                if (!list || list.length === 0) {
+                                  wishesEmpty.style.display = "block";
+                                  return;
+                                }
+                                wishesEmpty.style.display = "none";
+
+                                list.forEach(function (item) {
+                                  var card = document.createElement("div");
+                                  card.className = "custom-wish-item";
+
+                                  var isHadir = (item.kehadiran || "").toLowerCase().indexOf("tidak") === -1 && (item.kehadiran || "").toLowerCase().indexOf("notsure") === -1;
+                                  var badgeClass = isHadir ? "hadir" : "tidak-hadir";
+                                  var badgeText = isHadir ? (item.kehadiran + (item.jumlah ? " (" + item.jumlah + ")" : "")) : "Tidak Hadir";
+
+                                  card.innerHTML =
+                                    '<div class="custom-wish-header">' +
+                                    '  <div class="custom-wish-name"><i class="fas fa-user-circle"></i> ' + escapeHtml(item.nama) + '</div>' +
+                                    '  <span class="custom-wish-badge ' + badgeClass + '">' + escapeHtml(badgeText) + '</span>' +
+                                    '</div>' +
+                                    '<div class="custom-wish-text">' + escapeHtml(item.ucapan) + '</div>' +
+                                    '<div class="custom-wish-time"><i class="far fa-clock"></i> ' + escapeHtml(item.timestamp || "") + '</div>';
+
+                                  wishesList.appendChild(card);
+                                });
+                              }
+
+                              function updateBadgeCount() {
+                                toggleBadge.textContent = cachedWishes.length;
+                              }
+
+                              function escapeHtml(text) {
+                                if (!text) return "";
+                                var div = document.createElement("div");
+                                div.innerText = text;
+                                return div.innerHTML;
+                              }
+
+                              function showStatus(msg, isSuccess) {
+                                statusMsg.textContent = msg;
+                                statusMsg.className = "custom-status-msg " + (isSuccess ? "success" : "error");
+                                statusMsg.style.display = "block";
+                                setTimeout(function () {
+                                  statusMsg.style.display = "none";
+                                }, 5000);
+                              }
+
+                              function fetchWishesFromGAS() {
+                                renderWishes(cachedWishes);
+                                if (!GAS_ENDPOINT || GAS_ENDPOINT.indexOf("REPLACE_WITH") !== -1) {
+                                  return;
+                                }
+                                wishesLoading.style.display = "block";
+                                fetch(GAS_ENDPOINT + "?action=read", { method: "GET" })
+                                  .then(function (res) { return res.json(); })
+                                  .then(function (res) {
+                                    wishesLoading.style.display = "none";
+                                    if (res && res.status === "success" && Array.isArray(res.data)) {
+                                      cachedWishes = res.data;
+                                      localStorage.setItem("wishes_dina_hendra", JSON.stringify(cachedWishes));
+                                      renderWishes(cachedWishes);
+                                      updateBadgeCount();
+                                    }
+                                  })
+                                  .catch(function (err) {
+                                    wishesLoading.style.display = "none";
+                                    console.log("GAS fetch fallback to cache", err);
+                                  });
+                              }
+
+                              // Submit Form
+                              form.addEventListener("submit", function (e) {
+                                e.preventDefault();
+                                var nama = document.getElementById("rsvpNama").value.trim();
+                                var ucapan = document.getElementById("rsvpUcapan").value.trim();
+                                var kehadiran = inputKehadiran.value;
+                                var jumlah = (kehadiran === "Hadir") ? document.getElementById("rsvpJumlah").value : "0";
+
+                                if (!nama || !ucapan) {
+                                  showStatus("Mohon lengkapi nama dan ucapan Anda.", false);
+                                  return;
+                                }
+
+                                btnSubmit.disabled = true;
+                                btnSubmitText.textContent = "Mengirim...";
+
+                                var now = new Date();
+                                var dateStr = now.toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric" }) + " " +
+                                              now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" });
+
+                                var newEntry = {
+                                  nama: nama,
+                                  ucapan: ucapan,
+                                  kehadiran: kehadiran,
+                                  jumlah: jumlah,
+                                  timestamp: dateStr
+                                };
+
+                                // Optimistic update
+                                cachedWishes.unshift(newEntry);
+                                localStorage.setItem("wishes_dina_hendra", JSON.stringify(cachedWishes));
+                                updateBadgeCount();
+                                if (wishesContainer.style.display === "block") {
+                                  renderWishes(cachedWishes);
+                                }
+
+                                // Kirim ke Google Apps Script
+                                if (GAS_ENDPOINT && GAS_ENDPOINT.indexOf("REPLACE_WITH") === -1) {
+                                  var params = new URLSearchParams();
+                                  params.append("action", "write");
+                                  params.append("nama", nama);
+                                  params.append("ucapan", ucapan);
+                                  params.append("kehadiran", kehadiran);
+                                  params.append("jumlah", jumlah);
+
+                                  fetch(GAS_ENDPOINT, {
+                                    method: "POST",
+                                    mode: "no-cors",
+                                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                                    body: params.toString()
+                                  }).then(function () {
+                                    btnSubmit.disabled = false;
+                                    btnSubmitText.textContent = "Kirim Ucapan";
+                                    showStatus("Terima kasih! Ucapan & konfirmasi kehadiran Anda berhasil dikirim.", true);
+                                    document.getElementById("rsvpUcapan").value = "";
+                                  }).catch(function (err) {
+                                    btnSubmit.disabled = false;
+                                    btnSubmitText.textContent = "Kirim Ucapan";
+                                    showStatus("Ucapan tersimpan! Terima kasih.", true);
+                                    document.getElementById("rsvpUcapan").value = "";
+                                  });
+                                } else {
+                                  setTimeout(function () {
+                                    btnSubmit.disabled = false;
+                                    btnSubmitText.textContent = "Kirim Ucapan";
+                                    showStatus("Terima kasih! Ucapan & konfirmasi kehadiran Anda berhasil dikirim.", true);
+                                    document.getElementById("rsvpUcapan").value = "";
+                                  }, 600);
+                                }
+                              });
+                            })();
+                          </script>
                         </div>
                       </div>
                     </div>
